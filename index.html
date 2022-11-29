@@ -70,7 +70,10 @@
     </div>
   
     <div class="row">
-      <div class="col"></div>
+      <div class="col">
+        <div class="py-3 d-flex justify-content-center align-items-center" id="qr">
+        </div>
+      </div>
       <div class="col">
         <p id="tanggal_sertifikat">Tanggal sertfikat</p>
         <p>Kepala Badan Pengembangan Sumber Daya Manusia Hukum dan Hak Asasi Manusia</p>
@@ -160,6 +163,9 @@
   <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
   <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.js" integrity="sha512-dBB2PGgYedA6vzize7rsf//Q6iuUuMPvXCDybHtZP3hQXCPCD/YVJXK3QYZ2v0p7YCfVurqr8IdcSuj4CCKnGg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- QR Generator -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
   <!-- Script untuk simpan nilai -->
   <!-- <script  src="./variables.js"></script> -->
@@ -263,6 +269,18 @@
       html2pdf().set(opt).from(element).save();  
     }
 
+
+
+
+    // ############################ QR ###################################
+    var qrc = new QRCode(document.getElementById("qr"), {
+      text: "https://code-boxx.com/",
+      width: 160,
+      height: 160,
+      colorDark: "#000000",
+      colorLight: "#ffffff",
+      correctLevel : QRCode.CorrectLevel.L
+    });
   </script>
 </body>
 </html>
