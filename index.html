@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <!-- CSS only -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+   
+  <!-- CSS buatan sendiri -->
+  <link rel="stylesheet" href="./pdf_css.css">
+  <!-- ########################################### EDIT LOKASINYA SESUAI DI MANA DISIMPAN ################################################## -->
+
+</head>
+<body class="container p-md-5 p-sm-2">
+
+  <div id="toPrint">
+    <div class="row">
+      <img src="./logo.png" class="img-thumbnail mx-auto my-2 d-block" alt="" style="max-width: 100px;">
+    </div>
+    <div>
+      <p class="">Berdasarkan Surat Kepala Badan Pengembangan Sumber Daya Manusia Hukum dan HAM Nomor <span name="nomor_surat_span" class="text-uppercase"></span> Hal Penyelenggaraan Pelatihan Konsep Dasar HAM dengan Metode Pembelajaran Mandiri Menggunakan Aplikasi Massive Open Online Course (MOOC) Kementerian Hukum dan HAM Tahun <span name="tahun_event">[tahun sekarang]</span> tanggal <span name="tanggal_event">[tanggal]</span> <span name="bulan_event">[bulan]</span> <span name="tahun_event">[tahun sekarang]</span>, Kepala Badan Pengembangan Sumber Daya Manusia Hukum dan Hak Asasi Manusia menyatakan bahwa :</p>
+    </div>
+  
+    <br>
+    <br>
+  
+    <div>
+      <h3 class="text-uppercase text-center " id="nama_penerima">[nama orang]</h3>
+      
+      <br>
+      
+      <p class="mb-1">Telah Menyelesaikan </p>
+      <h3 class="text-uppercase text-center " id="nama_event">[nama pelatihan]</h3>
+    </div>
+    
+    <br>
+    
+    <div>
+      <p>yang diselenggarakan oleh Badan Pengembangan Sumber Daya Manusia Hukum dan Hak Asasi Manusia melalui Pembelajaran Mandiri menggunakan aplikasi Massive Open Online Course (MOOC) Kemenkumham dengan jumlah <span id="jumlah_jam">[Durasi dalam jam]</span> Jam Pelajaran.</p>
+    </div>
+  
+    <div class="row">
+      <div class="col"></div>
+      <div class="col">
+        <p id="tanggal_sertifikat">Tanggal sertfikat</p>
+        <p>Kepala Badan Pengembangan Sumber Daya Manusia Hukum dan Hak Asasi Manusia</p>
+        <p class="pt-5 mt-3 text-uppercase" id="nama_pemberi">asep kurnia</p>
+        <p class="text-uppercase" >nip. <span id="nip_pemberi"></span></p>
+      </div>
+    </div>
+    <div class="row">
+      <small class="col">Dokumen ini telah ditandatangani secara digital dan keaslian dokumen dapat dipertanggungjawabkan dengan identifikator</small>
+  
+      <small class="col-3 text-center" id="identifikator">random number</small>
+    </div>
+  </div>
+
+  <div class="my-4">
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal_form">Edit Penerima Sertifikat</button>
+  </div>
+
+  <div class="mx-auto modal" id="modal_form">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <form action="">
+
+            <!-- <div class="form-group row">
+              <label for="nomor_surat_form" class="col col-form-label">Nomor Surat</label>
+              <div class="col-sm-10 col-md-8 input-group">
+                <input type="text" class="form-control" id="nomor_surat_form" name="nomor_surat_form">
+              </div>
+            </div> -->
+      
+            <div class="form-group row">
+              <label for="tanggal_event_form" class="col col-form-label">Tanggal Event</label>
+              <div class="col-sm-10 col-md-8 input-group">
+                <input type="date" class="form-control" id="tanggal_event_form" name="tanggal_event_form">
+              </div>
+            </div>
+      
+            <div class="form-group row">
+              <label for="nama_penerima_form" class="col col-form-label">Nama Penerima</label>
+              <div class="col-sm-10 col-md-8 input-group">
+                <input type="text" class="form-control" id="nama_penerima_form" name="nama_penerima_form">
+              </div>
+            </div>
+      
+            <div class="form-group row">
+              <label for="nama_event_form" class="col col-form-label">Nama Event</label>
+              <div class="col-sm-10 col-md-8 input-group">
+                <input type="text" class="form-control" id="nama_event_form" name="nama_event_form">
+              </div>
+            </div>
+      
+            <div class="form-group row">
+              <label for="jumlah_jam_form" class="col col-form-label">Jumlah jam</label>
+              <div class="col-sm-10 col-md-8 input-group">
+                <input type="number" class="form-control" id="jumlah_jam_form" name="jumlah_jam_form">
+              </div>
+            </div>
+      
+            <!-- <div class="form-group row">
+              <label for="identifikator_form" class="col col-form-label">identifikator</label>
+              <div class="col-sm-10 col-md-8 input-group">
+                <input type="number" class="form-control" id="identifikator_form" name="identifikator_form">
+              </div>
+            </div> -->
+
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="print()">Print</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- JQuery 3.x -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+  <!-- JSPDF & HTML2Canvas -->
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+  <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.js" integrity="sha512-dBB2PGgYedA6vzize7rsf//Q6iuUuMPvXCDybHtZP3hQXCPCD/YVJXK3QYZ2v0p7YCfVurqr8IdcSuj4CCKnGg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- Script untuk simpan nilai -->
+  <script  src="./variables.js"></script>
+  <script  src="./print.js"></script>
+  <!-- ########################################### EDIT LOKASINYA SESUAI DI MANA DISIMPAN ################################################## -->
+
+</body>
+</html>
